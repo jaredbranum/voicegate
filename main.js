@@ -12,7 +12,7 @@ var server = net.createServer(function (socket) {
   socket.addListener("data", function(data){
     sys.puts('---');
     sys.puts(data);
-    var reply = "<stream:stream xmlns='jabber:client' xmlns:stream='http://etherx.jabber.org/streams' id='c2s_123' from='example.com' version='1.0'>";
+    var reply = "<?xml version='1.0' ?><stream:stream xmlns='jabber:client' xmlns:stream='http://etherx.jabber.org/streams' id='c2s_123' from='example.com' version='1.0'>";
     socket.write("");
   });
   
