@@ -6,8 +6,6 @@ var host        = "localhost"
   , tls         = require('tls')
   , fs          = require('fs')
   , xmpp        = require('xmpp-handler')
-  , http        = require('https')
-  , httpsClient = http.createClient('80', 'https://www.google.com/voice')
   , tcpServer   = net.createServer(function (socket){
     socket.on("connect", function () {
       sys.puts("Connection from " + socket.remoteAddress);
