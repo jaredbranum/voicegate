@@ -1,13 +1,15 @@
 require.paths.unshift('./lib');
 
-var host        = "localhost"
+var xmpp
+  , host        = "localhost"
   , sys         = require('sys')
   , net         = require('net')
   , tls         = require('tls')
   , fs          = require('fs')
-  , xmpp        = require('xmpp-handler')
+  , xmppHandler = require('xmpp-handler')
   , tcpServer   = net.createServer(function (socket){
     socket.on("connect", function () {
+      xmpp = new xmppHandler();
       sys.puts("Connection from " + socket.remoteAddress);
     });  
     socket.on("data", function(data){
